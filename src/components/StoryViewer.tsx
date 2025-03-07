@@ -26,8 +26,8 @@ const StoryViewer: React.FC<StoryViewerProps> = ({
   }, [index, stories.length, onClose]);
 
   return (
-    <div className="modal-overlay">
-      <div className="modal-content">
+    <div className="modal-overlay" onClick={onClose}>
+      <div className="modal-content" onClick={(e) => e.stopPropagation()}>
         <img src={stories[index].userStory} className="modal-img" alt="Story" />
         <div
           className="nav-zone"
